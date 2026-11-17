@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fort Hotel Yasin — Yasin Valley, Ghizer</title>
+<meta name="description" content="Fort Hotel Yasin — a comfortable stone-and-timber hotel at the heart of Yasin Valley, Ghizer, Gilgit-Baltistan. Spacious rooms, local food and wide valley views. Rates on enquiry.">
+<meta name="theme-color" content="#39434b">
+<style>
+  :root{
+    --stone:#39434b; --deep:#22282d; --wood:#7c5a30; --band:#8a6d3b;
+    --cream:#f7f3ea; --paper:#fffdf7; --sand:#eae1cd; --line:#d6cbb2;
+    --ink:#2e2a22; --muted:#6a6151; --wa:#35694b; --wa-dark:#2b573d;
+    --err:#8c2f1d; --err-border:#b06a52;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
+  h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:600;color:var(--deep);line-height:1.25}
+  a{text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--wood);outline-offset:2px}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  header{position:sticky;top:0;z-index:10;background:var(--deep)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1100px;margin:0 auto}
+  .brand{font-family:Georgia,serif;font-size:1.08rem;font-weight:700;color:#f5efe0;letter-spacing:.02em}
+  .brand span{display:block;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:.68rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:#c9b98f}
+  .nav-links{display:flex;gap:18px}
+  .nav-links a{color:#ece3cd;font-size:.9rem;padding:10px 4px;display:inline-block}
+  .nav-links a:hover{color:#fff;text-decoration:underline}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  .hero{position:relative;background:var(--deep)}
+  .hero img.ph{width:100%;height:82vh;min-height:440px;object-fit:cover;object-position:center 40%}
+  .hero .shade{position:absolute;inset:0;background:rgba(20,24,27,.42)}
+  .hero .hero-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 20px 54px}
+  .hero .kicker{letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;color:#ecdfc2;margin-bottom:14px}
+  .hero h1{color:#fff;font-size:2.6rem;line-height:1.18;max-width:780px;margin-bottom:14px}
+  .hero p.lead{color:#f7efdd;font-size:1.08rem;max-width:640px;margin-bottom:28px}
+  @media(max-width:640px){.hero h1{font-size:1.9rem}.hero img.ph{height:70vh}}
+  .btn{display:inline-block;font-weight:600;font-size:.97rem;padding:13px 28px;border-radius:8px;background:var(--wa);color:#fff}
+  .btn:hover{background:var(--wa-dark)}
+  .btn.light{background:transparent;border:1px solid #fff;color:#fff;margin-left:10px}
+  .btn.light:hover{background:rgba(255,255,255,.16)}
+  @media(max-width:480px){.btn.light{margin-left:0;margin-top:10px}}
+
+  section{padding:72px 0}
+  section[id]{scroll-margin-top:90px}
+  .kicker{letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;font-weight:600;color:var(--wood);margin-bottom:10px;text-align:center}
+  .section-head{max-width:640px;margin:0 auto 40px;text-align:center}
+  .section-head h2{font-size:2rem}
+  @media(max-width:640px){.section-head h2{font-size:1.6rem}}
+  .section-head p{color:var(--muted);margin-top:10px}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:980px;margin:0 auto}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+  .about-grid img{border-radius:8px;width:100%;height:100%;object-fit:cover}
+  .about-copy p{font-size:1.05rem;color:#423c30;margin-bottom:14px}
+  .about-facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 18px}
+  .fact strong{display:block;color:var(--deep);font-size:.95rem}
+  .fact span{font-size:.83rem;color:var(--muted)}
+
+  .rooms{background:var(--sand)}
+  .room-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:860px;margin:0 auto;align-items:stretch}
+  @media(max-width:640px){.room-grid{grid-template-columns:1fr}}
+  .room{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+  .room img{width:100%;height:250px;object-fit:cover}
+  .room-band{height:8px;background:var(--band)}
+  .room-body{padding:22px;display:flex;flex-direction:column;flex:1}
+  .room-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
+  .room-head h3{font-size:1.4rem;line-height:1.25}
+  .rate-pill{flex:none;background:transparent;color:var(--wood);border:1px solid var(--line);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;border-radius:4px;margin-top:6px}
+  .room-features{list-style:none;margin-bottom:20px}
+  .room-features li{display:flex;align-items:center;gap:9px;padding:3px 0;font-size:.94rem;color:#4c4636}
+  .room-features .tick{flex:none;width:17px;height:17px;color:var(--wa)}
+  .rooms-note{max-width:720px;margin:26px auto 0;text-align:center;font-size:.92rem;color:var(--muted)}
+
+  .gallery-grid{columns:3;column-gap:16px;max-width:1000px;margin:0 auto}
+  @media(max-width:820px){.gallery-grid{columns:2}}
+  @media(max-width:520px){.gallery-grid{columns:1}}
+  .g-item{break-inside:avoid;margin-bottom:22px}
+  .g-item img{width:100%;border-radius:8px}
+  .g-item figcaption{font-size:.86rem;color:var(--muted);margin-top:7px;text-align:center}
+  .photo-credit{text-align:center;font-size:.82rem;color:var(--muted);margin-top:6px}
+
+  .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:860px;margin:0 auto}
+  @media(max-width:640px){.exp-grid{grid-template-columns:1fr}}
+  .exp{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px 24px}
+  .exp h3{font-size:1.1rem;margin-bottom:7px}
+  .exp p{font-size:.94rem;color:var(--muted)}
+  .exp-sec{background:var(--cream)}
+
+  .setting-sec{background:var(--paper)}
+  .setting-main{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;max-width:1000px;margin:0 auto}
+  @media(max-width:760px){.setting-main{grid-template-columns:1fr}}
+  .setting-main img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+  .setting-copy p{font-size:1.05rem;color:#423c30;margin-bottom:14px}
+  .setting-copy p:last-child{margin-bottom:0}
+
+  footer{background:var(--deep);color:#c9b98f;padding:22px 20px 16px;font-size:.9rem}
+  .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px}
+  @media(max-width:640px){.footer-grid{grid-template-columns:1fr;gap:16px}}
+  footer .fname{color:#fff;font-family:Georgia,serif;font-size:1.05rem;font-weight:700;margin-bottom:4px}
+  .footer-head{font-family:Georgia,serif;color:#f5efe0;font-size:.98rem;margin-bottom:6px}
+  .footer-col p + p{margin-top:3px}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:5px}
+  footer a{color:#e6d9b8}
+  footer a:hover{color:#fff;text-decoration:underline}
+  .footer-bottom{max-width:1100px;margin:14px auto 0;padding-top:10px;border-top:1px solid rgba(230,217,184,.22);font-size:.82rem;display:flex;justify-content:space-between;align-items:baseline;gap:4px 16px;flex-wrap:wrap}
+  .footer-bottom .kohweb{font-size:.78rem;color:#97865f}
+  @media(max-width:640px){.footer-bottom{flex-direction:column;align-items:center;text-align:center}}
+
+  .enquire-btn{display:block;text-align:center;margin-top:auto;background:var(--wa);color:#fff;font-size:.95rem;font-weight:600;padding:13px 16px;border-radius:8px}
+  .enquire-btn:hover{background:var(--wa-dark);color:#fff}
+
+  .booking{background:var(--sand)}
+  .enquiry-form{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px;max-width:720px;margin:0 auto;text-align:left}
+  @media(max-width:560px){.enquiry-form{padding:22px 18px}}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:560px){.form-row{grid-template-columns:1fr}}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:.9rem;font-weight:600;color:var(--deep);margin-bottom:6px}
+  .field label .req{color:var(--wood)}
+  .field input,.field select,.field textarea{width:100%;font:inherit;font-size:.97rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:11px 12px;min-height:48px}
+  .field textarea{resize:vertical;min-height:84px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--wood);outline-offset:1px;border-color:var(--wood)}
+  .field input.field-invalid,.field select.field-invalid{border-color:var(--err-border)}
+  .field-error{display:none;color:var(--err);font-size:.85rem;margin-top:6px}
+  .form-summary{background:var(--sand);border:1px solid var(--line);border-radius:8px;padding:13px 16px;font-size:.95rem;color:var(--deep);margin-bottom:18px;min-height:52px}
+  .form-submit{width:100%;border:none;cursor:pointer;font:inherit;min-height:50px}
+  .booking-alt{text-align:center;margin-top:20px;font-size:.95rem;color:var(--muted)}
+  .booking-alt a{color:var(--wood);font-weight:600}
+  .booking-alt a:hover{text-decoration:underline}
+
+  .mobile-cta{display:none}
+  @media(max-width:640px){
+    body{padding-bottom:76px}
+    .mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--deep);padding:10px 14px;border-top:1px solid rgba(245,239,224,.18)}
+    .mobile-cta a{display:block;background:var(--wa);color:#fff;text-align:center;font-weight:600;font-size:.97rem;padding:13px 16px;border-radius:8px;min-height:48px}
+    .mobile-cta a:hover{background:var(--wa-dark)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">Fort Hotel Yasin <span>Yasin Valley · Ghizer</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#explore">Explore</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <img class="ph" src="images/hero.jpg" alt="Fort Hotel Yasin — the stone-clad hotel beneath the mountains of Yasin Valley" fetchpriority="high">
+  <div class="shade"></div>
+  <div class="hero-text">
+    <p class="kicker">Yasin Valley · Ghizer · Gilgit-Baltistan</p>
+    <h1>Fort Hotel Yasin</h1>
+    <p class="lead">A comfortable stone-and-timber hotel at the heart of Yasin Valley — spacious rooms, local food, and wide views of the valley and its mountains.</p>
+    <div>
+      <a class="btn" href="#booking">Make a Booking Enquiry</a>
+      <a class="btn light" href="#rooms">View Rooms</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">About Us</p>
+      <h2>Welcome to Fort Hotel Yasin</h2>
+    </div>
+    <div class="about-grid">
+      <img src="images/exterior.jpg" alt="Fort Hotel Yasin from the garden, with poplar trees and snow peaks behind" loading="lazy">
+      <div class="about-copy">
+        <p>Standing at the heart of Yasin Valley, Fort Hotel Yasin blends traditional and modern architecture — dark stone walls, warm timber and a wide front lawn under the Hindu Kush foothills.</p>
+        <p>Guests describe the rooms as spacious and clean, the food as proper local cooking, and the staff as friendly and helpful. Travellers crossing the Ghizer valleys — and trekking groups heading for Darkot — have made it their Yasin stop for years.</p>
+        <div class="about-facts">
+          <div class="fact"><strong>Yasin Valley</strong><span>Ghizer District, Gilgit-Baltistan</span></div>
+          <div class="fact"><strong>4.5 on Google</strong><span>Rated by 90+ guests</span></div>
+          <div class="fact"><strong>Restaurant</strong><span>Local cuisine, cooked fresh</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Stay With Us</p>
+      <h2>Rooms &amp; Facilities</h2>
+      <p>Simple, comfortable rooms made for a good night's rest in the mountains. Rates are confirmed on enquiry — just ask on WhatsApp.</p>
+    </div>
+    <div class="room-grid">
+      <article class="room">
+        <img src="images/deluxe-room.jpg" alt="Deluxe Room at Fort Hotel Yasin — hand-carved wooden bed, tall windows and red carpet" loading="lazy">
+        <div class="room-band" aria-hidden="true"></div>
+        <div class="room-body">
+          <div class="room-head"><h3>Deluxe Room</h3><span class="rate-pill">Rates on Enquiry</span></div>
+          <ul class="room-features">
+            <li><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.6l3.4 3.4L13.5 4.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Hand-carved wooden bed</li>
+            <li><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.6l3.4 3.4L13.5 4.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Spacious, with tall windows and daylight</li>
+            <li><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.6l3.4 3.4L13.5 4.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Traditional local woodwork</li>
+          </ul>
+          <a class="enquire-btn" href="#booking" data-room="Deluxe Room">Enquire about this room</a>
+        </div>
+      </article>
+      <article class="room">
+        <img src="images/room.jpg" alt="A comfortable room at Fort Hotel Yasin with a wooden bed and warm blanket" loading="lazy">
+        <div class="room-band" aria-hidden="true"></div>
+        <div class="room-body">
+          <div class="room-head"><h3>Comfortable Rooms</h3><span class="rate-pill">Rates on Enquiry</span></div>
+          <ul class="room-features">
+            <li><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.6l3.4 3.4L13.5 4.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Spacious and clean</li>
+            <li><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.6l3.4 3.4L13.5 4.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Most rooms with western-style en-suite bathrooms</li>
+            <li><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.6l3.4 3.4L13.5 4.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Valley and mountain views</li>
+          </ul>
+          <a class="enquire-btn" href="#booking" data-room="Any available room">Enquire about a room</a>
+        </div>
+      </article>
+    </div>
+    <p class="rooms-note">In summer the hotel fills quickly — booking ahead is recommended, especially in July and August.</p>
+  </div>
+</section>
+
+<section class="exp-sec" id="facilities">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">At the Hotel</p>
+      <h2>Facilities &amp; Comforts</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp"><h3>Restaurant &amp; Local Food</h3><p>Freshly cooked local cuisine — the food is one of the things guests praise most about a stay here.</p></div>
+      <div class="exp"><h3>Balconies &amp; Valley Views</h3><p>Rooms with balconies and panoramic views over Yasin Valley and the surrounding mountains.</p></div>
+      <div class="exp"><h3>Garden &amp; Outdoor Seating</h3><p>A wide lawn and garden seating in front of the hotel — made for slow evenings under the peaks.</p></div>
+      <div class="exp"><h3>Traditional Sitting Area</h3><p>A carpeted floor-seating corner with local cushions — a quiet place for tea and conversation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="setting-sec" id="explore">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Explore</p>
+      <h2>Yasin Valley, From Our Door</h2>
+      <p>One of Ghizer's quieter valleys — old forts, terraced villages and high passes, reached by the side road from Gupis.</p>
+    </div>
+    <div class="setting-main">
+      <img src="images/front-wide.jpg" alt="Fort Hotel Yasin and its lawn, with the mountains of Yasin Valley behind" loading="lazy">
+      <div class="setting-copy">
+        <p>The ruins of Yasin Fort sit near the town — a reminder of the valley's days as a small principality. From the hotel, days out run up-valley to Barkulti and Darkot village, the last stop below the historic Darkot Pass into Chitral's Broghil Valley.</p>
+        <p>Tour routes through Yasin also visit Muduri Fort and the Mazar of Lalak Jan, while the villages between offer easy walks among terraced fields, orchards and glacier-fed streams.</p>
+        <p>Yasin is about six hours by road from Gilgit, turning off the main Ghizer road at Gupis. The high passes are best attempted from July to September, with a local guide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Gallery</p>
+      <h2>Fort Hotel Yasin in Pictures</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-item"><img src="images/hero.jpg" alt="The front of Fort Hotel Yasin, with the Pakistan flag flying" loading="lazy"><figcaption>The hotel front, beneath the valley mountains</figcaption></figure>
+      <figure class="g-item"><img src="images/deluxe-room.jpg" alt="Deluxe Room with a hand-carved wooden bed" loading="lazy"><figcaption>Deluxe Room — hand-carved wooden bed</figcaption></figure>
+      <figure class="g-item"><img src="images/exterior.jpg" alt="Fort Hotel Yasin from the side, with garden chairs and poplar trees" loading="lazy"><figcaption>From the garden — poplars and snow peaks</figcaption></figure>
+      <figure class="g-item"><img src="images/sitting.jpg" alt="Traditional floor seating with red carpets and local cushions" loading="lazy"><figcaption>The traditional sitting corner</figcaption></figure>
+      <figure class="g-item"><img src="images/room.jpg" alt="A comfortable bed with a wooden headboard and warm red blanket" loading="lazy"><figcaption>A comfortable room, ready for the night</figcaption></figure>
+      <figure class="g-item"><img src="images/front-wide.jpg" alt="Wide view of Fort Hotel Yasin and its front lawn" loading="lazy"><figcaption>The hotel and its front lawn</figcaption></figure>
+    </div>
+    <p class="photo-credit">All photographs courtesy of Fort Hotel Yasin.</p>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Book Your Stay</p>
+      <h2>Make a Booking Enquiry</h2>
+      <p>Tell us your dates and we will confirm availability and rates on WhatsApp — no payment is taken here.</p>
+    </div>
+    <form class="enquiry-form" id="enquiryForm" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="bkName">Your name <span class="req">*</span></label>
+          <input type="text" id="bkName" name="name" autocomplete="name" placeholder="e.g. Ahmed Khan">
+          <p class="field-error" id="err-bkName"></p>
+        </div>
+        <div class="field">
+          <label for="bkPhone">Your WhatsApp / phone <span class="req">*</span></label>
+          <input type="tel" id="bkPhone" name="phone" autocomplete="tel" placeholder="e.g. 03xx xxxxxxx">
+          <p class="field-error" id="err-bkPhone"></p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="bkCheckin">Check-in date <span class="req">*</span></label>
+          <input type="date" id="bkCheckin" name="checkin">
+          <p class="field-error" id="err-bkCheckin"></p>
+        </div>
+        <div class="field">
+          <label for="bkCheckout">Check-out date <span class="req">*</span></label>
+          <input type="date" id="bkCheckout" name="checkout">
+          <p class="field-error" id="err-bkCheckout"></p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="bkRoom">Room interest</label>
+          <select id="bkRoom" name="room">
+            <option value="">No preference</option>
+            <option value="Deluxe Room">Deluxe Room</option>
+            <option value="Any available room">Any available room</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bkGuests">Number of guests</label>
+          <select id="bkGuests" name="guests">
+            <option value="1">1 guest</option>
+            <option value="2" selected>2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6+">6+ guests</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bkRequests">Special requests <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <textarea id="bkRequests" name="requests" placeholder="Anything we should know — arrival time, meals, extra bedding..."></textarea>
+      </div>
+      <div class="form-summary" id="bkSummary">Choose your dates to see the number of nights. Rates are confirmed on enquiry.</div>
+      <button type="submit" class="btn form-submit">Send Enquiry on WhatsApp</button>
+    </form>
+    <p class="booking-alt">Prefer to talk first? <a href="https://wa.me/923454260000" target="_blank" rel="noopener">Chat with us on WhatsApp</a> or call <a href="tel:+923454260000">+92 345 4260000</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <p class="fname">Fort Hotel Yasin</p>
+      <p>Yasin Valley, Ghizer District</p>
+      <p>Gilgit-Baltistan, Pakistan</p>
+      <p>A comfortable hotel at the heart of Yasin Valley.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-head">Explore</p>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#rooms">Rooms &amp; Facilities</a></li>
+        <li><a href="#explore">Explore Yasin Valley</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Book Your Stay</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-head">Contact</p>
+      <ul>
+        <li><a href="https://wa.me/923454260000" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        <li><a href="tel:+923454260000">Call +92 345 4260000</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>All photographs courtesy of Fort Hotel Yasin.</p>
+    <p class="kohweb">Demo website prepared by KohWeb</p>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a href="#booking">Make a Booking Enquiry</a></div>
+
+<script>
+(function () {
+  var WA_NUMBER = '923454260000';
+  var form = document.getElementById('enquiryForm');
+  var nameEl = document.getElementById('bkName');
+  var phoneEl = document.getElementById('bkPhone');
+  var inEl = document.getElementById('bkCheckin');
+  var outEl = document.getElementById('bkCheckout');
+  var roomEl = document.getElementById('bkRoom');
+  var guestsEl = document.getElementById('bkGuests');
+  var reqEl = document.getElementById('bkRequests');
+  var summaryEl = document.getElementById('bkSummary');
+  var fieldErrors = {
+    bkName: document.getElementById('err-bkName'),
+    bkPhone: document.getElementById('err-bkPhone'),
+    bkCheckin: document.getElementById('err-bkCheckin'),
+    bkCheckout: document.getElementById('err-bkCheckout')
+  };
+
+  function parseDate(v) {
+    if (!v) return null;
+    var p = v.split('-');
+    return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  }
+  function fmtDate(d) {
+    return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  }
+  function nights() {
+    var a = parseDate(inEl.value), b = parseDate(outEl.value);
+    if (!a || !b) return null;
+    return Math.round((b - a) / 86400000);
+  }
+
+  function updateSummary() {
+    var n = nights();
+    if (n === null) {
+      summaryEl.textContent = 'Choose your dates to see the number of nights. Rates are confirmed on enquiry.';
+      return;
+    }
+    if (n <= 0) {
+      summaryEl.textContent = 'Please check your dates — check-out needs to be after check-in.';
+      return;
+    }
+    var txt = n + (n === 1 ? ' night' : ' nights');
+    if (roomEl.value) {
+      txt += ' — ' + roomEl.value + '.';
+    } else {
+      txt += ' — no room preference; we will suggest the best available room for your dates.';
+    }
+    txt += ' Rates are confirmed on enquiry.';
+    summaryEl.textContent = txt;
+  }
+
+  [inEl, outEl, roomEl].forEach(function (el) {
+    el.addEventListener('change', updateSummary);
+    el.addEventListener('input', updateSummary);
+  });
+
+  [nameEl, phoneEl, inEl, outEl].forEach(function (el) {
+    el.addEventListener('input', function () { clearFieldError(el); });
+    el.addEventListener('change', function () { clearFieldError(el); });
+  });
+
+  document.querySelectorAll('[data-room]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var room = link.getAttribute('data-room');
+      for (var i = 0; i < roomEl.options.length; i++) {
+        if (roomEl.options[i].value === room) { roomEl.selectedIndex = i; break; }
+      }
+      updateSummary();
+    });
+  });
+
+  function clearFieldError(el) {
+    var fe = fieldErrors[el.id];
+    if (fe) { fe.textContent = ''; fe.style.display = 'none'; }
+    el.classList.remove('field-invalid');
+  }
+  function clearErrors() {
+    [nameEl, phoneEl, inEl, outEl].forEach(clearFieldError);
+  }
+  function showError(msg, el) {
+    clearErrors();
+    var fe = fieldErrors[el.id];
+    if (fe) { fe.textContent = msg; fe.style.display = 'block'; }
+    el.classList.add('field-invalid');
+    if (el) el.focus();
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+
+    var name = nameEl.value.trim();
+    var phone = phoneEl.value.trim();
+    if (!name) { showError('Please tell us your name so we know who the enquiry is from.', nameEl); return; }
+    if (!phone) { showError('Please add your WhatsApp or phone number so we can reply to you.', phoneEl); return; }
+    if (!inEl.value) { showError('Please choose your check-in date.', inEl); return; }
+    if (!outEl.value) { showError('Please choose your check-out date.', outEl); return; }
+
+    var n = nights();
+    if (n === null || n <= 0) { showError('Your check-out date needs to be after your check-in date — please adjust the dates.', outEl); return; }
+
+    var lines = [];
+    lines.push('Booking Enquiry — Fort Hotel Yasin');
+    lines.push('Name: ' + name);
+    lines.push('Phone: ' + phone);
+    lines.push('Check-in: ' + fmtDate(parseDate(inEl.value)));
+    lines.push('Check-out: ' + fmtDate(parseDate(outEl.value)));
+    lines.push('Nights: ' + n);
+    lines.push('Room interest: ' + (roomEl.value || 'No preference'));
+    lines.push('Guests: ' + guestsEl.value);
+    var req = reqEl.value.trim();
+    if (req) lines.push('Special requests: ' + req);
+    lines.push('Please confirm availability and rates. Thank you!');
+
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+  });
+})();
+</script>
+</body>
+</html>
